@@ -12,30 +12,29 @@ import com.bumptech.glide.Glide
 class ShoeAdapter(
     private val shoeList: List<Item>,
     private val onItemClick: (Item) -> Unit,
-    private val onAddToCartClick: (Item) -> Unit // Parámetro para el clic del botón
+    private val onAddToCartClick: (Item) -> Unit
 ) : RecyclerView.Adapter<ShoeAdapter.ShoeViewHolder>() {
 
     inner class ShoeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val nameTextView: TextView = itemView.findViewById(R.id.itemName)
         private val priceTextView: TextView = itemView.findViewById(R.id.itemPrice)
         private val imageView: ImageView = itemView.findViewById(R.id.itemImage)
-        private val addToCartButton: Button = itemView.findViewById(R.id.addToCartButton) // Inicializa el botón
+        private val addToCartButton: Button = itemView.findViewById(R.id.addToCartButton)
 
         fun bind(item: Item) {
             nameTextView.text = item.name
-            priceTextView.text = "${item.price} USD" // Formato de precio
+            priceTextView.text = "${item.price} CLP"
 
-            // Cargar la imagen con Glide
             Glide.with(itemView.context)
                 .load(item.imageUrl)
                 .into(imageView)
 
-            // Manejar el clic en la imagen
+            // click imagen
             imageView.setOnClickListener {
                 onItemClick(item)
             }
 
-            // Manejar el clic en el botón Agregar al carrito
+            // boton agregar carrito
             addToCartButton.setOnClickListener {
                 onAddToCartClick(item) // Llama al listener
             }
