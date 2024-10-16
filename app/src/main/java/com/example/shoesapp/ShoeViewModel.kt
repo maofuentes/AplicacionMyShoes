@@ -18,16 +18,16 @@ class ShoeViewModel : ViewModel() {
 
     fun getShoeList(): List<Item> {
         return listOf(
-            Item("Zapato 1", "https://www.bestiasxx.com/cdn/shop/products/zapato-hombre-upepo-curry-bestias-644907_5000x.jpg", 94.990),
-            Item("Zapato 2", "https://www.bestiasxx.com/cdn/shop/files/zapatilla-hombre-dronte-west-fargo-bestias-shoes-655865_400x.jpg", 99.990),
-            Item("Zapato 3", "https://www.bestiasxx.com/cdn/shop/files/botin-hombre-new-atlas-low-black-bestias-shoes-338807_400x.jpg", 99.990),
-            Item("Zapato 4", "https://www.bestiasxx.com/cdn/shop/files/zapato-hombre-ox-black-bestias-shoes-119412_400x.jpg", 94.990),
-            Item("Zapato 5", "https://www.bestiasxx.com/cdn/shop/files/zapatilla-mujer-koi-white-mostaza-bestias-shoes-372677_400x.jpg", 94.990),
-            Item("Zapato 6", "https://www.bestiasxx.com/cdn/shop/files/zapatilla-hombre-monkey-west-fargo-bestias-shoes-317064_400x.jpg", 94.990),
-            Item("Zapato 7", "https://www.bestiasxx.com/cdn/shop/files/bototo-hombre-yeti-west-fargo-bestias-shoes-536341_400x.jpg", 119.990),
-            Item("Zapato 8", "https://www.bestiasxx.com/cdn/shop/files/zapato-hombre-ox-west-fargo-bestias-shoes-788776_400x.jpg", 94.990),
-            Item("Zapato 9", "https://www.bestiasxx.com/cdn/shop/files/botin-hombre-kiltro-black-nw-bestias-shoes-134985_400x.jpg", 60.990),
-            Item("Zapato 10", "https://www.bestiasxx.com/cdn/shop/files/zapatilla-mujer-cayman-low-cayma-off-white-bestias-shoes-163340_400x.jpg", 49.990)
+            Item("Zapato 1", "https://www.bestiasxx.com/cdn/shop/products/zapato-hombre-upepo-curry-bestias-644907_5000x.jpg", 94.990, "Zapato con Color"),
+            Item("Zapato 2", "https://www.bestiasxx.com/cdn/shop/files/zapatilla-hombre-dronte-west-fargo-bestias-shoes-655865_400x.jpg", 99.990, "Zapato sin Color"),
+            Item("Zapato 3", "https://www.bestiasxx.com/cdn/shop/files/botin-hombre-new-atlas-low-black-bestias-shoes-338807_400x.jpg", 99.990, "Zapato Caro"),
+            Item("Zapato 4", "https://www.bestiasxx.com/cdn/shop/files/zapato-hombre-ox-black-bestias-shoes-119412_400x.jpg", 94.990, "Zapato Barato"),
+            Item("Zapato 5", "https://www.bestiasxx.com/cdn/shop/files/zapatilla-mujer-koi-white-mostaza-bestias-shoes-372677_400x.jpg", 94.990, "Zapato con cordones"),
+            Item("Zapato 6", "https://www.bestiasxx.com/cdn/shop/files/zapatilla-hombre-monkey-west-fargo-bestias-shoes-317064_400x.jpg", 94.990, "Zapato Saltarin"),
+            Item("Zapato 7", "https://www.bestiasxx.com/cdn/shop/files/bototo-hombre-yeti-west-fargo-bestias-shoes-536341_400x.jpg", 119.990, "Zapato con Descripcion"),
+            Item("Zapato 8", "https://www.bestiasxx.com/cdn/shop/files/zapato-hombre-ox-west-fargo-bestias-shoes-788776_400x.jpg", 94.990, "Zapato para zapatear"),
+            Item("Zapato 9", "https://www.bestiasxx.com/cdn/shop/files/botin-hombre-kiltro-black-nw-bestias-shoes-134985_400x.jpg", 60.990, "Zapato para mirar"),
+            Item("Zapato 10", "https://www.bestiasxx.com/cdn/shop/files/zapatilla-mujer-cayman-low-cayma-off-white-bestias-shoes-163340_400x.jpg", 49.990, "Zapato para el agua")
         )
     }
 }

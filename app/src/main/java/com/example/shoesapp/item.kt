@@ -6,18 +6,21 @@ import android.os.Parcelable
 data class Item(
     val name: String,
     val imageUrl: String,
-    val price: Double
+    val price: Double,
+    val description: String
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
         parcel.readString() ?: "",
-        parcel.readDouble()
+        parcel.readDouble(),
+        parcel.readString() ?: ""
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(name)
         parcel.writeString(imageUrl)
         parcel.writeDouble(price)
+        parcel.writeString(description)
     }
 
     override fun describeContents(): Int {

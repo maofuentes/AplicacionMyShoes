@@ -11,27 +11,33 @@ import com.bumptech.glide.Glide
 
 class ShoeAdapter(
     private val shoeList: List<Item>,
-    private val onAddToCartClick: (Item) -> Unit //
+    private val onItemClick: (Item) -> Unit,
+    private val onAddToCartClick: (Item) -> Unit // Parámetro para el clic del botón
 ) : RecyclerView.Adapter<ShoeAdapter.ShoeViewHolder>() {
 
-    class ShoeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val shoeImage: ImageView = itemView.findViewById(R.id.shoeImage)
-        private val shoeName: TextView = itemView.findViewById(R.id.shoeName)
-        private val shoePrice: TextView = itemView.findViewById(R.id.shoePrice)
-        private val addToCartButton: Button = itemView.findViewById(R.id.addToCartButton)
+    inner class ShoeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val nameTextView: TextView = itemView.findViewById(R.id.itemName)
+        private val priceTextView: TextView = itemView.findViewById(R.id.itemPrice)
+        private val imageView: ImageView = itemView.findViewById(R.id.itemImage)
+        private val addToCartButton: Button = itemView.findViewById(R.id.addToCartButton) // Inicializa el botón
 
-        fun bind(item: Item, onAddToCartClick: (Item) -> Unit) {
-            shoeName.text = item.name
-            shoePrice.text = item.price.toString()
+        fun bind(item: Item) {
+            nameTextView.text = item.name
+            priceTextView.text = "${item.price} USD" // Formato de precio
 
+            // Cargar la imagen con Glide
             Glide.with(itemView.context)
                 .load(item.imageUrl)
-                .error(R.drawable.error_image)
-                .into(shoeImage)
+                .into(imageView)
 
-            // Agregar al carrito
+            // Manejar el clic en la imagen
+            imageView.setOnClickListener {
+                onItemClick(item)
+            }
+
+            // Manejar el clic en el botón Agregar al carrito
             addToCartButton.setOnClickListener {
-                onAddToCartClick(item)
+                onAddToCartClick(item) // Llama al listener
             }
         }
     }
@@ -42,7 +48,7 @@ class ShoeAdapter(
     }
 
     override fun onBindViewHolder(holder: ShoeViewHolder, position: Int) {
-        holder.bind(shoeList[position], onAddToCartClick)
+        holder.bind(shoeList[position])
     }
 
     override fun getItemCount(): Int {
